@@ -34,13 +34,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6">
-                                        <div class="image">
-                                            <figure>
-                                                <img v-bind:src="product.image" alt="" width="130" height="130">
-                                            </figure>
-                                        </div>
-                                    </div>
                                 </div>
                                 
                                 
@@ -61,13 +54,11 @@
         var webstore = new Vue({
             el: '#app',
             data: {
-                // sitename: 'Vue.js Pet Depot',
                 product: {
                     id: 001,
                     subject: 'Math',
                     location: 'London',
                     price: 5000,
-                    image: "images/product.png",
                     pieces: 5
                 },
             },
