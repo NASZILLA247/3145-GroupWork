@@ -11,34 +11,6 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="/css/todo.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: black;
-        }
-
-        .height {
-            height: 100vh
-        }
-
-        .card {
-            width: 350px;
-        }
-
-        .image {
-            position: absolute;
-            right: 12px;
-            top: 10px
-        }
-
-        .btn-danger {
-            height: 48px;
-            font-size: 18px
-        }
-    </style>
 </head>
 
 <body>
@@ -52,7 +24,7 @@
                         <div class="card p-3 border">
                             <div class="d-flex justify-content-between align-items-center ">
                                 <div class="mt-2">
-                                    <h4 class="text-uppercase">Depot</h4>
+                                    <h4 class="text-uppercase h5">Subject: Math</h4>
                                     <div class="mt-5">
                                         <h5 class="text-uppercase mb-0" v-text="product.name"></h5>
                                         <p>Price: ${{product.price}}</p>
@@ -65,50 +37,11 @@
                                     </figure>
                                 </div>
                             </div>
-                            <small class="mb-2" v-text="product.description"></small>
+                            
                             <button class="btn btn-black" type="button" v-on:click="product.pieces -= 1" :disabled="product.pieces < 1">Add to
                                 cart</button>
                         </div>
-                        <div class="card p-3 border">
-                            <div class="d-flex justify-content-between align-items-center ">
-                                <div class="mt-2">
-                                    <h4 class="text-uppercase">Depot</h4>
-                                    <div class="mt-5">
-                                        <h5 class="text-uppercase mb-0" v-text="product.name"></h5>
-                                        <p>Price: ${{product.price}}</p>
-                                        <p>{{product.pieces > 0 ? product.pieces : "Out of Stock"}}  </p>
-                                    </div>
-                                </div>
-                                <div class="image">
-                                    <figure>
-                                        <img v-bind:src="product.image" alt="" width="120" height="180">
-                                    </figure>
-                                </div>
-                            </div>
-                            <small class="mb-2" v-text="product.description"></small>
-                            <button class="btn btn-black" type="button" v-on:click="product.pieces -= 1" :disabled="product.pieces < 1">Add to
-                                cart</button>
-                        </div>
-                        <div class="card p-3 border">
-                            <div class="d-flex justify-content-between align-items-center ">
-                                <div class="mt-2">
-                                    <h4 class="text-uppercase">Depot</h4>
-                                    <div class="mt-5">
-                                        <h5 class="text-uppercase mb-0" v-text="product.name"></h5>
-                                        <p>Price: ${{product.price}}</p>
-                                        <p>{{product.pieces > 0 ? product.pieces : "Out of Stock"}}  </p>
-                                    </div>
-                                </div>
-                                <div class="image">
-                                    <figure>
-                                        <img v-bind:src="product.image" alt="" width="120" height="180">
-                                    </figure>
-                                </div>
-                            </div>
-                            <small class="mb-2" v-text="product.description"></small>
-                            <button class="btn btn-black" type="button" v-on:click="product.pieces -= 1" :disabled="product.pieces < 1">Add to
-                                cart</button>
-                        </div>
+                        
                     </div>
                 </main>
 
@@ -124,7 +57,6 @@
                 product: {
                     id: 001,
                     name: 'Men Jeans',
-                    description: ' Large sized Men Jeans for all occasions',
                     price: 5000,
                     image: "images/product.png",
                     pieces: 5
