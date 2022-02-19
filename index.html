@@ -22,20 +22,28 @@
 
                     <div class="height d-flex justify-content-center align-items-center">
                         <div class="card p-3 border">
-                            <div class="d-flex justify-content-between align-items-center ">
-                                <div class="mt-2">
-                                    <h4 class="text-uppercase h5">Subject: Math</h4>
-                                    <div class="mt-5">
-                                        <h5 class="text-uppercase mb-0" v-text="product.name"></h5>
-                                        <p>Price: ${{product.price}}</p>
-                                        <p>{{product.pieces > 0 ? product.pieces : "Out of Stock"}}  </p>
+                            <div class="">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="mt-2">
+                                            <h4 class="h5">Subject: {{product.subject}}</h4>
+                                            <div class="mt-5">
+                                                <h5 class="mb-0 h6">Location: {{product.location}}</h5>
+                                                <p>Price: ${{product.price}}</p>
+                                                <p>Spaces: {{product.pieces > 0 ? product.pieces : "Out of Stock"}}  </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="image">
+                                            <figure>
+                                                <img v-bind:src="product.image" alt="" width="130" height="130">
+                                            </figure>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="image">
-                                    <figure>
-                                        <img v-bind:src="product.image" alt="" width="120" height="180">
-                                    </figure>
-                                </div>
+                                
+                                
                             </div>
                             
                             <button class="btn btn-black" type="button" v-on:click="product.pieces -= 1" :disabled="product.pieces < 1">Add to
@@ -56,7 +64,8 @@
                 // sitename: 'Vue.js Pet Depot',
                 product: {
                     id: 001,
-                    name: 'Men Jeans',
+                    subject: 'Math',
+                    location: 'London',
                     price: 5000,
                     image: "images/product.png",
                     pieces: 5
